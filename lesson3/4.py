@@ -1,0 +1,5 @@
+user_number = int(input("Введите целое число: "))
+print("тысяч -", user_number // 1000)
+print("сотни -", user_number // 100 % 10)
+print("десятки -", user_number // 10 % 10)
+print("единицы -", user_number % 10)

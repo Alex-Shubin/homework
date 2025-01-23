@@ -1,0 +1,5 @@
+phone_price = float(input("За сколько вы купили телефон? "))
+print("- цена продажи (+30% к цене закупке) " + str(phone_price * 1.3))
+print("- цена продажи со скидкой 5% " + str(phone_price * 0.95))
+print("- цена продажи со скидкой 10% " + str(phone_price * 0.9))
+print("- цена продажи со скидкой 15% " + str(phone_price * 0.85))

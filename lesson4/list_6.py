@@ -7,3 +7,8 @@
     - сумму всех элементов
     - список только элементов с нечетным индексом
 '''
+some_list = [1, 1, 2, 3, 21, 8, 13, 21, 34, 55, 89]
+print("-", min(some_list))
+print("-", max(some_list))
+print("-", sum(some_list))
+print(some_list[1::2])

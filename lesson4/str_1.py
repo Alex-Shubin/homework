@@ -15,13 +15,15 @@ print(f"В этой фразе {len(user_string.split(" "))} слов/слова
 user_string = user_string.lower()
 
 print(f"В этой фразе {
-    len(list(filter(lambda vowel: vowel in "ауоиэыяюеёaeiouy", user_string)))
+    len(list(filter(lambda x: x in "ауоиэыяюеёaeiouy", user_string)))
     } гласных букв")
 
-# test_list = list(filter(lambda vowel: vowel in "ауоиэыяюеёaeiouy", user_string))
+# разбираюсь с lambda
+# test_list = list(filter(lambda x: x in "ауоиэыяюеёaeiouy", user_string))
 # print(test_list)
 
 print(f"В этой фразе {sum(map(user_string.count, "ауоиэыяюеёaeiouy"))} гласных")
 
+# разбираюсь с map
 # test_list = list(map(user_string.count, "ауоиэыяюеёaeiouy"))
 # print(test_list)

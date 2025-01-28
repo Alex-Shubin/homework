@@ -12,3 +12,5 @@ print("-", min(some_list))
 print("-", max(some_list))
 print("-", sum(some_list))
 print(some_list[1::2])
+# print(some_list[0::2]) # если называть первым элементом элемент с индексом
+                         # тогда третий элемент имеет индекс 2

@@ -6,7 +6,7 @@ d = {'one':11, 'two':22, 'hello':'python', True:False}
 """
 d = {'one':11, 'two':22, 'hello':'python', True:False}
 
-del_request = int(input("Введите номер для удаления: "))
+del_request = int(input("Введите номер для удаления: ")) - 1
 
 del d[list(d.keys())[del_request]]
 

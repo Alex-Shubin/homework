@@ -59,9 +59,12 @@ employees_list = {1:employee1, 2:employee2, 3:employee3}
 
 employee_request = input("Введите ФИО сотрудника: ")
 
-selected_employee = list(filter(lambda x: employee_request in employees_list[x]["ФИО"], employees_list))
+# employee_request = "Иванова Ю. М."
 
-print(selected_employee)
-print(employees_list[selected_employee[0]])
+selected_employee = list(filter(lambda x: employee_request in employees_list[x]["ФИО"], employees_list))[0]
 
-# не понимаю как сделать без filter, который возвращает только list
+from pprint import pprint
+
+pprint(employees_list[selected_employee])
+
+# pprint(employees_list[list(filter(lambda x: employee_request in employees_list[x]["ФИО"], employees_list))[0]])

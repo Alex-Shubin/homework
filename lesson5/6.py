@@ -17,13 +17,13 @@
     3) 11 44
     
 '''
-# user_set1 = set(list(map(int, input("Введите несколько чисел через пробел: ").split())))
-# user_set2 = set(list(map(int, input("Введите несколько чисел через пробел: ").split())))
-# user_set3 = set(list(map(int, input("Введите несколько чисел через пробел: ").split())))
+user_set1 = set(list(map(int, input("Введите несколько чисел через пробел: ").split())))
+user_set2 = set(list(map(int, input("Введите несколько чисел через пробел: ").split())))
+user_set3 = set(list(map(int, input("Введите несколько чисел через пробел: ").split())))
 
-user_set1 = set(list(map(int, "1 2 11 22".split())))
-user_set2 = set(list(map(int, "1 2 22 33".split())))
-user_set3 = set(list(map(int, "1 2 33 44".split())))
+# user_set1 = set(list(map(int, "1 2 11 22".split())))
+# user_set2 = set(list(map(int, "1 2 22 33".split())))
+# user_set3 = set(list(map(int, "1 2 33 44".split())))
 
 print(sorted(list(user_set1.union(user_set2, user_set3))))
 print(list(user_set1.intersection(user_set2, user_set3)))

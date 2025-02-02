@@ -12,5 +12,9 @@ abcd = {"a":10,
 
 sum_request = input("Введите фразу из 5 букв, используя символы a b c d: ")
 
-print(sum(int(list(filter(lambda x: x in sum_request, abcd.values())))))
+# sum_request = "ddddd"
+
+print(sum(list(map(lambda x: abcd.get(x), sum_request))))
+
+# print(sum(list((abcd[x] for x in sum_request)))) # то же самое
 

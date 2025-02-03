@@ -44,7 +44,8 @@ user_set_cut1.update(user_set_cut2, user_set_cut3) # сделал множест
 
 # print(user_set_cut1)
 
-print("-* вывести числа которые есть только в одной из трех строк: ", user_set.difference(user_set_cut1))
+print("-* вывести числа которые есть только в одной из трех строк: ", 
+      user_set.difference(user_set_cut1))
 
 # решения через условие
 
@@ -52,10 +53,12 @@ user_list = list(user_set1)
 user_list.extend(list(user_set2))
 user_list.extend(list(user_set3))
 
-print("Метод 2 с условием - .count: ", *filter(lambda x: user_list.count(x) == 1, user_list))
+print("Метод 2 с условием - .count: ", 
+      *filter(lambda x: user_list.count(x) == 1, user_list))
 
 from collections import Counter
 c = Counter()
 c = Counter(user_list)
 
-print("Метод 3 с условием - .get: ", *filter(lambda x: c.get(x) == 1, c))
+print("Метод 3 с условием - .get: ", 
+      *filter(lambda x: c.get(x) == 1, c))

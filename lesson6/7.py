@@ -15,7 +15,7 @@ obs = mgr.weather_at_place(user_city)
 
 w = obs.weather
 
-print(dir(w))
+# print(dir(w))
 print(f"""{user_city} погода сейчас:
       На небе: {w.detailed_status}
       Температура: {w.temperature('celsius').get('temp')}

@@ -16,5 +16,7 @@ sum_request = input("Введите фразу из 5 букв, использу
 
 print(sum(list(map(lambda x: abcd.get(x), sum_request))))
 
-# print(sum(list((abcd[x] for x in sum_request)))) # то же самое
+print(sum(list(map(abcd.get, sum_request)))) # без лямбды - подкидывает каждый элемент из итерации как аргумент функции
+
+print(sum(list((abcd[x] for x in sum_request)))) # то же самое
 

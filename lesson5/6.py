@@ -38,6 +38,11 @@ user_set_cut1 = user_set1.intersection(user_set2) # общее между 1 и 2
 user_set_cut2 = user_set2.intersection(user_set3) # общее между 2 и 3
 user_set_cut3 = user_set1.intersection(user_set3) # общее между 1 и 3
 
+# этот вариант, рекомендованный на уроке (1:21), выдает пересечение (общее) 
+# сразу 3 множеств - 1 и 2 - что не является требуемым результатом
+# user_set_cut = user_set_cut1 & user_set_cut2 & user_set_cut3
+# print(user_set_cut)
+
 # print(user_set_cut1, user_set_cut2, user_set_cut3) 
 
 user_set_cut1.update(user_set_cut2, user_set_cut3) # сделал множество только повторяющихся значений

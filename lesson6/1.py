@@ -3,7 +3,10 @@
 охарактеризовать пользователя - 
 ребенок, подросток, юноша, в расцвете сил, пожилой, старик.
 """
-user_age = int(input("Сколько вам лет? "))
+from datetime import datetime
+
+year_of_birth = int(input("Ваш год рождения? "))
+user_age = datetime.now().year - year_of_birth
 
 if user_age >= 0:
     if 0 <= user_age <= 10: 

@@ -7,11 +7,21 @@
 '''
 user_number = abs(int(round(float((input("Введите любое число: "))))))
 
-if user_number < 20:
-    print(f"{user_number // 7} чисел в диапазоне от 0 до {user_number} делится на 7")
-elif user_number > 20:
-    print(f"{user_number // 11} чисел в диапазоне от 0 до {user_number} делится на 11")
-elif user_number == 20:
+div = 7 if user_number < 20 else 11
+print(user_number // div)
+
+if user_number == 20:
     print(f"для числа {user_number} нет правила")
 else:
     print(f"Вы ввели {user_number}")
+
+# старый вариант
+
+# if user_number < 20:
+#     print(f"{user_number // 7} чисел в диапазоне от 0 до {user_number} делится на 7")
+# elif user_number > 20:
+#     print(f"{user_number // 11} чисел в диапазоне от 0 до {user_number} делится на 11")
+# elif user_number == 20:
+#     print(f"для числа {user_number} нет правила")
+# else:
+#     print(f"Вы ввели {user_number}")

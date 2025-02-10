@@ -90,8 +90,10 @@ for user in employees_list:
 skills_list.sort(key=lambda x: x[2], reverse=True)
 
 skills_dict = dict()
+
 for index, item in enumerate(skills_list):
-    skills_dict.update({index:item})
+    new_item = [item[0], item[1].split()[0], item[2]]
+    skills_dict.update({index:new_item})
 
 for i in skills_dict:
     print(f"{i+1}. {' - '.join(skills_dict[i])}")

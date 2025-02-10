@@ -38,7 +38,7 @@ while True:
                     break
                 elif i == "/":
                     # проверка деления на 0
-                    if int(calc_list[2]) == 0:
+                    if int(calc_list[2]) == "0":
                         print("Деление на 0! Попробуйте еще раз")
                         result = ""
                         break

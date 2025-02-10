@@ -9,59 +9,53 @@
     
     Запросить ФИО сотрудника и вывести по нему информацию.
 """
-
-employee1 = {
-    "ФИО":"Сидоров В. М.",
-    "должность":"директор",
-    "год рождения":"1973",
-    "список навыков":"руками водит",
-    "дети":{
-        "ребенок1":{
-            "имя":"Петя",
-            "год рождения":"1994"
+employees_list = {
+    1:{"Name":"Сидоров В. М.",
+    "Function":"директор",
+    "Year of birth":"1973",
+    "Skills":"руками водит",
+    "Children":{
+        "Child1":{
+            "Name":"Петя",
+            "Year of birth":"1994"
         },
-        "ребенок2":{
-            "имя":"Ира",
-            "год рождения":"1996"
+        "Child2":{
+            "Name":"Ира",
+            "Year of birth":"1996"}
+        }
+    }, 
+    2:{
+    "Name":"Петров И. Ю.",
+    "Function":"бухгалтер",
+    "Year of birth":"1967",
+    "Skills":"хорошо считает",
+    "Children":{
+        "Child1":{
+            "Name":"Вася",
+            "Year of birth":"1991"},
+        "Child2":{
+            "Name":"Коля",
+            "Year of birth":"1998"}
+        }
+    }, 
+    3:{
+    "Name":"Иванова Ю. М.",
+    "Function":"уборщица",
+    "Year of birth":"1975",
+    "Skills":"хорошо убирает",
+    "Children":{
+        "Child1":{
+            "Name":"Лера",
+            "Year of birth": "1997"}
         }
     }
 }
-employee2 = {
-    "ФИО":"Петров И. Ю.",
-    "должность":"бухгалтер",
-    "год рождения":"1967",
-    "список навыков":"хорошо считает",
-    "дети":{
-        "ребенок1":{
-            "имя":"Вася",
-            "год рождения":"1991"
-        },
-        "ребенок2":{
-            "имя":"Коля",
-            "год рождения":"1998"
-        }
-    }
-}
-employee3 = {
-    "ФИО":"Иванова Ю. М.",
-    "должность":"уборщица",
-    "год рождения":"1975",
-    "список навыков":"хорошо убирает",
-    "дети":{
-        "ребенок1":{
-            "имя":"Лера",
-            "год рождения": "1997"
-        }
-    }
-}
-
-employees_list = {1:employee1, 2:employee2, 3:employee3}
 
 employee_request = input("Введите ФИО сотрудника: ")
 
 # employee_request = "Иванова Ю. М."
 
-selected_employee = list(filter(lambda x: employee_request in employees_list[x]["ФИО"], employees_list))[0]
+selected_employee = list(filter(lambda x: employee_request in employees_list[x]["Name"], employees_list))[0]
 
 from pprint import pprint
 

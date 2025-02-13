@@ -24,7 +24,9 @@ sum_list = list(map(lambda i: i + 3 if i % 2 == 0 else i, init_list.copy()))
 # [5, 7, 9, 11]
 # sum_list = (list(map(lambda i: i + 3, 
 #                     filter(lambda x: x % 2 == 0, init_list.copy()))))
-# print(sum_list) 
+# или
+# sum_list = list(i + 3 for i in init_list.copy() if i % 2 == 0)
+print(sum_list) 
 
 
 # [3, 4, 9, 8, 15, 12, 21, 16, 27]
@@ -32,12 +34,3 @@ even_odd_list = (list(map(lambda i: i * 2 if i % 2 == 0
                           else i * 3, init_list.copy())))
 # print(even_odd_list) 
 
-"""
-почему у меня не получается использовать выражение
-sum_list = list(map(lambda i: i + 3 if i % 2 == 0, init_list.copy()))
-?
-требует else - в решении с ним и сделал
-и почему не требует else в примере из comprehension:
-d = {user['name']:len(user['name']) for user in users3 if user['age']==12}
-print(d)
-"""

@@ -7,8 +7,7 @@
 '''
 user_number = abs(int(round(float((input("Введите любое число: "))))))
 
-div = 7 if user_number < 20 else 11
-print(user_number // div)
+print(user_number // 7 if user_number < 20 else 11)
 
 if user_number == 20:
     print(f"для числа {user_number} нет правила")

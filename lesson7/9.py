@@ -122,17 +122,17 @@ columns_len.append(max(exps) if max(exps) >= len('Мастерство') else le
 
 # печать шапки
 print(f"{'-' * (sum(columns_len) + 13)}")
-print(f"|{'№': ^{columns_len[0] + 2}}"
-      f"|{'Навык': ^{columns_len[1] + 2}}"
-      f"|{'ФИО': ^{columns_len[2] + 2}}"
-      f"|{'Мастерство': ^{columns_len[3] + 2}}|"
+print(f"| {'№': ^{columns_len[0]}} "
+      f"| {'Навык': ^{columns_len[1]}} "
+      f"| {'ФИО': ^{columns_len[2]}} "
+      f"| {'Мастерство': ^{columns_len[3]}} |"
       )
 print(f"{'=' * (sum(columns_len) + 13)}")
 
 # печать содержимого
 for i, item in enumerate(skills_list):
-    print(f"|{i+1: ^{columns_len[0] + 2}}"
-          f"|{item[0]: <{columns_len[1] + 2}}"
-          f"|{item[1]: <{columns_len[2] + 2}}"
-          f"|{item[2]: ^{columns_len[3] + 2}}|"
+    print(f"| {i+1: ^{columns_len[0]}} "
+          f"| {item[0]: <{columns_len[1]}} "
+          f"| {item[1]: <{columns_len[2]}} "
+          f"| {item[2]: ^{columns_len[3]}} |"
           )

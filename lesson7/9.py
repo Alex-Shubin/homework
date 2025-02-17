@@ -25,6 +25,7 @@
  
 
 '''
+from pprint import pprint
 
 employees_list = [
     {"Name":"Сидоров В. М.",
@@ -69,7 +70,7 @@ employees_list = [
     "Year of birth":"1975",
     "Skills":{
         "JavaScript":"73",
-        "HTML":"97",
+        "HTML":"96",
         "PHP":"86"
         },
     "Children":{
@@ -87,14 +88,15 @@ skills_list = list()
 for index, emp in enumerate(employees_list, 1):
     skills_list = list()
     for skill, val in emp["Skills"].items():
-        skills_list.append((skill, emp["Name"], val))
-        
+        skills_list.append((skill, emp["Name"], val))    
     skills_list.sort(key=lambda x: x[2], reverse=True) # сорт скилл каждого юзера
     # вывод на печать 1 вариант
-    print(f"{index}. {skills_list[0][0]} - {str(skills_list[0][1]).split()[0]} - {skills_list[0][2]}")
-    
+    print(f"{index}. {skills_list[0][0]}" 
+          f" - {str(skills_list[0][1]).split()[0]}"
+          f" - {skills_list[0][2]}")
 
 # 2 задание
+skills_list = list()
 
 for user in employees_list:
     for skill, val in user["Skills"].items():
@@ -132,7 +134,7 @@ print(f"{'=' * (sum(columns_len) + 13)}")
 # печать содержимого
 for i, item in enumerate(skills_list):
     print(f"|{i+1: ^{columns_len[0] + 2}}"
-          f"|{item[0]: ^{columns_len[1] + 2}}"
-          f"|{item[1]: ^{columns_len[2] + 2}}"
+          f"|{item[0]: <{columns_len[1] + 2}}"
+          f"|{item[1]: <{columns_len[2] + 2}}"
           f"|{item[2]: ^{columns_len[3] + 2}}|"
           )

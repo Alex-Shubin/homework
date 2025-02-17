@@ -25,7 +25,6 @@
  
 
 '''
-from pprint import pprint
 
 employees_list = [
     {"Name":"Сидоров В. М.",
@@ -81,8 +80,6 @@ employees_list = [
     }
 ]
 
-skills_list = list()
-
 # 1 задание
 
 for index, emp in enumerate(employees_list, 1):
@@ -96,7 +93,8 @@ for index, emp in enumerate(employees_list, 1):
           f" - {skills_list[0][2]}")
 
 # 2 задание
-skills_list = list()
+
+skills_list = list() # очищаем список скилов
 
 for user in employees_list:
     for skill, val in user["Skills"].items():

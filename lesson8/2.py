@@ -3,8 +3,12 @@
 и возвращает либо площадь либо периметр в зависимости от дополнительного параметра.
 
 '''
-def rect_sq(a, b, square:True):
+def rect_sq(a, b, square=True):
     return a * b if square else (a + b) * 2
     
+a = 3
+b = 5
 
+print("Периметр =", rect_sq(a, b, False))
+print("Площадь =", rect_sq(a, b))
 

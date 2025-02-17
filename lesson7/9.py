@@ -25,10 +25,9 @@
  
 
 '''
-from pprint import pprint
 
-employees_list = {
-    1:{"Name":"Сидоров В. М.",
+employees_list = [
+    {"Name":"Сидоров В. М.",
     "Position":"директор",
     "Year of birth":"1973",
     "Skills":{
@@ -46,7 +45,7 @@ employees_list = {
             "Year of birth":"1996"}
         }
     }, 
-    2:{
+    {
     "Name":"Петров И. Ю.",
     "Position":"бухгалтер",
     "Year of birth":"1967",
@@ -64,7 +63,7 @@ employees_list = {
             "Year of birth":"1998"}
         }
     }, 
-    3:{
+    {
     "Name":"Иванова Ю. М.",
     "Position":"Front-End",
     "Year of birth":"1975",
@@ -79,21 +78,61 @@ employees_list = {
             "Year of birth": "1997"}
         }
     }
-}
+]
 
 skills_list = list()
 
-for user in employees_list:
-    for skill, val in employees_list[user]["Skills"].items():
-        skills_list.append((skill, employees_list[user]["Name"], val))
+# 1 задание
 
+for index, emp in enumerate(employees_list, 1):
+    skills_list = list()
+    for skill, val in emp["Skills"].items():
+        skills_list.append((skill, emp["Name"], val))
+        
+    skills_list.sort(key=lambda x: x[2], reverse=True) # сорт скилл каждого юзера
+    # вывод на печать 1 вариант
+    print(f"{index}. {skills_list[0][0]} - {str(skills_list[0][1]).split()[0]} - {skills_list[0][2]}")
+    
+
+# 2 задание
+
+for user in employees_list:
+    for skill, val in user["Skills"].items():
+        skills_list.append((skill, user["Name"], val))
+
+# сортируем все навыки
 skills_list.sort(key=lambda x: x[2], reverse=True)
 
-skills_dict = dict()
+# ширина 1 столбца
+columns_len = []
+columns_len.append(len(str(len(skills_list))))
 
-for index, item in enumerate(skills_list):
-    new_item = [item[0], item[1].split()[0], item[2]]
-    skills_dict.update({index:new_item})
+# ширина 2, 3 и 4 столбца
+skills = []
+names = []
+exps = []
 
-for i in skills_dict:
-    print(f"{i+1}. {' - '.join(skills_dict[i])}")
+for skill in skills_list:
+    skills.append(len(skill[0]))
+    names.append(len(skill[1]))
+    exps.append(len(skill[2]))
+columns_len.append(max(skills) if max(skills) >= len('Навык') else len('Навык'))
+columns_len.append(max(names) if max(names) >= len('ФИО') else len('ФИО'))
+columns_len.append(max(exps) if max(exps) >= len('Мастерство') else len('Мастерство'))
+
+# печать шапки
+print(f"{'-' * (sum(columns_len) + 13)}")
+print(f"|{'№': ^{columns_len[0] + 2}}"
+      f"|{'Навык': ^{columns_len[1] + 2}}"
+      f"|{'ФИО': ^{columns_len[2] + 2}}"
+      f"|{'Мастерство': ^{columns_len[3] + 2}}|"
+      )
+print(f"{'=' * (sum(columns_len) + 13)}")
+
+# печать содержимого
+for i, item in enumerate(skills_list):
+    print(f"|{i+1: ^{columns_len[0] + 2}}"
+          f"|{item[0]: ^{columns_len[1] + 2}}"
+          f"|{item[1]: ^{columns_len[2] + 2}}"
+          f"|{item[2]: ^{columns_len[3] + 2}}|"
+          )

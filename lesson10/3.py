@@ -18,9 +18,11 @@ def check_brackets(some_str):
             good += 1
         elif sym == ")":
             good -= 1
-        
-    return True if good == 0 else False
+        if good < 0:
+            return False
+    return good == 0
 
+print(check_brackets(")(()())("))
 print(check_brackets("(()())"))
 print(check_brackets("(()()()"))
 print(check_brackets("(hello(2)ver()(33)python)"))

@@ -8,11 +8,16 @@
 '''
 # если нужно было и результат в виде
 # a = 5, b = 9 -> 35 (5+6+7+8+9) 
-# - то сделаю позднее, с предыдущими строками не разобрался еще
+# - сделал
 
 def f_sum(a, b):
+    global s_list
     if b == a:
+        s_list.append(a)
         return a
+    s_list.append(b)
     return f_sum(a, b - 1) + b
 
-print(f_sum(3, 9))
+s_list = list()
+
+print(f"{f_sum(3, 9)} ({'+'.join([str(sym) for sym in s_list][::-1])})")

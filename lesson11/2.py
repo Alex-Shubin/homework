@@ -10,9 +10,9 @@
 def log_decorator(func):
     def wrapper(name, surname):
         print(f"Выполняется функция {func.__name__} с аргументами {name}, {surname}")
-        result = func(name, surname)
+        func(name, surname)
         print(f"{func.__name__} - завершена")
-        return result
+
     return wrapper
 
 @log_decorator

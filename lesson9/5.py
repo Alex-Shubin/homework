@@ -44,7 +44,28 @@ def sort_list_rek(some_list=list, sym="-"):
             print(sym * (len(inspect.getouterframes(inspect.currentframe()))-2) * 2 + str(num))
     return
 
+def sort_list(some_list=list, sym="-"):
+    str_list = str(some_list)
+    indent = 0
+    result = ""
+    for item in str_list:
+        if item.isdigit():
+            result = result + item
+        else:
+            if result:
+                print(f"{sym * (indent - 1) * 2}{result}")
+                result = ""
+            if item == "[":
+                indent += 1
+            elif item == "]":
+                indent -= 1
+            elif item == "," or " ":
+                pass
+                
+
 # some_list = [1, 2, 3, [4, [5, 6], 7], 8, 9]
 some_list=[1,[2,[[3],4]],5,[[[6,7]]],8,[[[[9,10]],11]],12]
 
-sort_list_rek(some_list)
+# sort_list_rek(some_list)
+sort_list(some_list)
+

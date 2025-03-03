@@ -22,14 +22,9 @@ def error_wrapper(func):
         except Exception as error:
             result = f"Ошибка в {func.__name__}: {error}"
         if filename:
-            try:
-                with open(filename, "a", encoding="utf-8") as file:
-                    file.write(str(result)+"\n")
-                    return result
-            except FileNotFoundError:
-                with open(filename, "w", encoding="utf-8") as file:
-                    file.write(str(result)+"\n")
-                    return result
+            with open(filename, "a", encoding="utf-8") as file:
+                file.write(str(result)+"\n")
+                return result   
         else:
             return result
         
@@ -43,8 +38,9 @@ def f1(x, y):
 def f2(a, b):
     return a + b + c # c не определена
 
-result1 = f1(6, 3, filename="lesson11\\234.txt")
-print(result1) # будет 2.0 - запишет в файл 123.txt в корне и 
+# result1 = f1(6, 3, filename="lesson11\\234.txt")
+# print(result1) # будет 2.0 - запишет в файл 123.txt в корне и 
+print(f1(6, 3))
 
 result2 = f1(6, 0, filename="lesson11\\234.txt")
 print(result2) # будет ошибка деления на 0

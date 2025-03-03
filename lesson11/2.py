@@ -8,9 +8,10 @@
 После выполнения функции напечатать строку "<имя функции> - завершена"
 """
 def log_decorator(func):
-    def wrapper(name, surname):
-        print(f"Выполняется функция {func.__name__} с аргументами {name}, {surname}")
-        func(name, surname)
+    def wrapper(*args, **kwargs):
+        print(f"Выполняется функция {func.__name__}"
+              f"с аргументами {kwargs.get('name')}, {kwargs.get('surname')}")
+        func(*args, **kwargs)
         print(f"{func.__name__} - завершена")
 
     return wrapper

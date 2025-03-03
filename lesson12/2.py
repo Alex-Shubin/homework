@@ -20,6 +20,8 @@
 
 Вывести студентов, у которых средний балл больше 8
 """
+from pprint import pprint
+
 class Student:
     def __init__(self, surname:str, name:str, group:str|int, grads:list):
         self.surname = surname
@@ -58,6 +60,9 @@ class Student:
     def __str__(self):
         return f"{self.surname} {self.name}, группа {self.group}, средний балл: {self.average_grade():.2f}"
     
+    def __repr__(self):
+        return f"{self.surname} {self.name}, группа {self.group}, средний балл: {self.average_grade():.2f}"
+    
 def sort_students(students, reversed=False, best=None):
     """
     Сортирует список студентов по среднему баллу
@@ -92,17 +97,26 @@ students = [
     Student("Мефодий", "Суханов", "9b", [8, 3, 5, 8, 4, 8, 3, 3]),
     Student("Иванов", "Ратибор", "9a", [3, 8, 3, 10, 8, 10, 4, 7, 7, 6]),
     Student("Анастасия", "Селиверстова", "9b", [7, 9, 5, 4, 4, 7, 4, 6, 4, 4]),
-    Student("Анжелика", "Быкова", "9a", [9, 6, 5, 10, 8, 8, 8, 6])
+    Student("Анжелика", "Быкова", "9a", [9, 6, 9, 10, 8, 8, 8, 9])
 ]
 
 # создание отсортированного списка по возрастанию СБ и вывод
-students_sorted_asc = sort_students(students)
-print_students(students_sorted_asc, "Студенты, по возрастанию среднего балла:")
+# students_sorted_asc = sort_students(students)
+# print_students(students_sorted_asc, "Студенты, по возрастанию среднего балла:")
 
 # создание отсортированного списка по убыванию СБ и вывод
-students_sorted_desc = sort_students(students, reversed=True)
-print_students(students_sorted_desc, "Студенты, по убыванию среднего балла:")
+# students_sorted_desc = sort_students(students, reversed=True)
+# print_students(students_sorted_desc, "Студенты, по убыванию среднего балла:")
 
 # создание отсортированного списка студентов со СБ выше 8
-best_students = sort_students(students, best=8)
-print_students(best_students, "Студенты со средним баллом больше 8:")
+# best_students = sort_students(students, best=8)
+# print_students(best_students, "Студенты со средним баллом больше 8:")
+
+
+# добавил import pprint, def __repr__
+# сортировка списка по возрастанию
+pprint(sorted(students))
+# сортировка списка по убыванию
+pprint(sorted(students, reverse=True))
+# студенты со средним баллом больше 8
+print(*filter(lambda student: student.average_grade() > 8, students))

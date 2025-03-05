@@ -26,38 +26,38 @@ class BookCard:
         :param title: название книги
         :param year: год издания
         """
-        self._author = author
-        self._title = title
-        self._year = year
+        self.__author = author
+        self.__title = title
+        self.__year = year
 
     # геттер автора
     @property
     def author(self) -> str:
-        return self._author
+        return self.__author
     
     # сеттер автора
     @author.setter
     def author(self, value: str):
         if not isinstance(value, str):
             raise ValueError("Автор должен быть строкой")
-        self._author = value
+        self.__author = value
 
     # геттер названия
     @property
     def title(self) -> str:
-        return self._title
+        return self.__title
     
     # сеттер названия
     @title.setter
     def title(self, value: str):
         if not isinstance(value, str):
             raise ValueError("Название должно быть строкой")
-        self._title = value
+        self.__title = value
 
     # геттер года издания
     @property
     def year(self) -> str:
-        return self._year
+        return self.__year
     
     # сеттер года издания
     @year.setter
@@ -67,7 +67,7 @@ class BookCard:
         if value <= 0 or value > CURRENT_YEAR:
             raise ValueError(f"Год издания должен быть больше 0"
                              f" и не больше {CURRENT_YEAR}")
-        self._year = value
+        self.__year = value
 
     # методы сортировки
     def __lt__(self, other):
@@ -106,8 +106,8 @@ if __name__ == "__main__":
     book2 = BookCard("Толкин", "Сильмариллион", 2016)
     book3 = BookCard("Желязны", "Хроники Амбера", 2022)
 
-    print(book1.year) # 2016
-    print(book2.year) # 2019
+    print(book1.year) # 2019
+    print(book2.year) # 2016
 
     book1.year = 2010
     print(book1.year) # стало 2010
